@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+
+    
     //properties
     var Multnum:Int = 0
     var MaxNum:Int = 0
@@ -26,6 +28,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var statLbl: UILabel!
+    @IBOutlet weak  var ErrorLbl: UIButton!
+    
+    @IBOutlet weak var winnerbtn: UIButton!
 
     
     @IBAction func onPlayBtnPressed (sender: UIButton!) {
@@ -41,6 +46,8 @@ class ViewController: UIViewController {
             currentNum = Multnum
             statLbl.text = "tap 'add' to add!"
             findMaxNum()
+        } else {
+            showErrorBtn()
         }
         
     }
@@ -49,8 +56,17 @@ class ViewController: UIViewController {
         addcurrentandmultiple()
         updatestatLbl()
         if isGameOver(){
-            restartGame()
+            showWinnerScreen()
         }
+    }
+    @IBAction func onErrorLblPressed (sender: UIButton!) {
+        multipleField.text = ""
+        ErrorLbl.hidden = true
+        
+    }
+    
+    @IBAction func onWinnerPress (sender: UIButton!) {
+        restartGame()
     }
     //functions
     
@@ -74,15 +90,53 @@ class ViewController: UIViewController {
         
     }
     func restartGame() {
-        playBtn.hidden = false
-        multipleField.hidden = false
-        
-        statLbl.hidden = true
-        addBtn.hidden = true
+        winnerbtn.hidden = true
+        showLogo()
+        showstarterscreen()
         currentNum = 0
         Multnum = 0
         MaxNum = 0
         workingNum = 0
+        multipleField.text = ""
     }
-
+    
+    func showErrorBtn() {
+        ErrorLbl.hidden = false
+    }
+    
+    func showWinnerScreen() {
+        winnerbtn.hidden = false
+        hideLogo()
+        HideStarterScreen()
+        HidePlayScreen()
+    }
+    
+    
+    func HideStarterScreen() {
+        playBtn.hidden = true
+        multipleField.hidden = true
+    }
+    
+    func HidePlayScreen() {
+        statLbl.hidden = true
+        addBtn.hidden = true
+    }
+    
+    func showstarterscreen() {
+        playBtn.hidden = false
+        multipleField.hidden = false
+    }
+    
+    func showPlayScreen() {
+        statLbl.hidden = false
+        addBtn.hidden = false
+    }
+    
+    func hideLogo() {
+        titleLogo.hidden = true
+    }
+    
+    func showLogo(){
+        titleLogo.hidden = false
+    }
 }

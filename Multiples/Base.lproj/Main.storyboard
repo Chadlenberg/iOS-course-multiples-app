@@ -31,8 +31,18 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What Multiple would you like to add by?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6kT-nH-wVq" userLabel="Multiple Number">
                                 <rect key="frame" x="165" y="261" width="271" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xa-EJ-bri" userLabel="errorBtn">
+                                <rect key="frame" x="116" y="323" width="399" height="269"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Please Enter a Round Number and Try Again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onErrorLblPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sKe-JL-any"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46T-iL-F2C" userLabel="PlayBtn">
                                 <rect key="frame" x="170" y="342" width="272" height="268"/>
                                 <state key="normal" image="play"/>
@@ -53,6 +63,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBc-i4-PYS" userLabel="winnerBtn">
+                                <rect key="frame" x="87" y="174" width="456" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="456" id="ELo-VZ-ta5"/>
+                                    <constraint firstAttribute="height" constant="160" id="eSO-6B-T2y"/>
+                                </constraints>
+                                <state key="normal" image="Winner!"/>
+                                <connections>
+                                    <action selector="onWinnerPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F5X-ZX-Goz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -66,19 +87,25 @@
                             <constraint firstAttribute="trailing" secondItem="yC5-MC-PA4" secondAttribute="trailing" constant="160" id="BUD-7d-Nch"/>
                             <constraint firstItem="6kT-nH-wVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BbC-cZ-09o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yC5-MC-PA4" secondAttribute="trailing" constant="-180" id="D4R-ol-vOE"/>
+                            <constraint firstItem="SBc-i4-PYS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FyZ-8X-q4a"/>
                             <constraint firstItem="46T-iL-F2C" firstAttribute="top" secondItem="6kT-nH-wVq" secondAttribute="bottom" constant="21" id="HZC-8j-ydA"/>
                             <constraint firstItem="1xf-rn-M5r" firstAttribute="leading" secondItem="46T-iL-F2C" secondAttribute="leading" id="HdK-VX-Nay"/>
+                            <constraint firstItem="46T-iL-F2C" firstAttribute="trailing" secondItem="3Xa-EJ-bri" secondAttribute="trailing" id="IDX-Wx-4Nj"/>
                             <constraint firstAttribute="bottom" secondItem="yC5-MC-PA4" secondAttribute="bottom" constant="64" id="JTI-aL-WpI"/>
                             <constraint firstItem="46T-iL-F2C" firstAttribute="trailing" secondItem="6kT-nH-wVq" secondAttribute="trailing" id="L8x-Qr-LRb"/>
                             <constraint firstItem="yC5-MC-PA4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="130" id="Ofc-kt-OAk"/>
                             <constraint firstItem="aSu-Qr-t3Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ohh-du-rW3"/>
                             <constraint firstItem="yC5-MC-PA4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-42" id="TwP-00-Hbt"/>
                             <constraint firstItem="1xf-rn-M5r" firstAttribute="centerY" secondItem="46T-iL-F2C" secondAttribute="centerY" id="VEs-Ev-ODz"/>
+                            <constraint firstItem="46T-iL-F2C" firstAttribute="leading" secondItem="3Xa-EJ-bri" secondAttribute="leading" id="WAt-0H-V9Y"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="46T-iL-F2C" secondAttribute="bottom" constant="20" id="Wqh-6z-Ha6"/>
+                            <constraint firstItem="SBc-i4-PYS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hWw-KB-j8e"/>
                             <constraint firstAttribute="bottomMargin" secondItem="yC5-MC-PA4" secondAttribute="bottom" constant="-64" id="hdH-Kg-C09"/>
+                            <constraint firstItem="rVh-ji-NPk" firstAttribute="top" secondItem="3Xa-EJ-bri" secondAttribute="top" id="ifI-2f-c3g"/>
                             <constraint firstItem="yC5-MC-PA4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="jSk-ow-Ahc"/>
                             <constraint firstItem="rVh-ji-NPk" firstAttribute="leading" secondItem="6kT-nH-wVq" secondAttribute="leading" id="m7V-ZU-7ta"/>
                             <constraint firstItem="yC5-MC-PA4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="nOO-Ne-WRu"/>
+                            <constraint firstItem="46T-iL-F2C" firstAttribute="bottom" secondItem="3Xa-EJ-bri" secondAttribute="bottom" id="pul-Rp-99W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aSu-Qr-t3Y" secondAttribute="trailing" id="rwa-Uy-A3i"/>
                             <constraint firstItem="1xf-rn-M5r" firstAttribute="trailing" secondItem="46T-iL-F2C" secondAttribute="trailing" id="spI-UO-NUu"/>
                             <constraint firstItem="yC5-MC-PA4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-150" id="sz8-70-grU"/>
@@ -97,11 +124,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="ErrorLbl" destination="3Xa-EJ-bri" id="DN6-4T-6Am"/>
                         <outlet property="addBtn" destination="1xf-rn-M5r" id="let-PV-UwM"/>
                         <outlet property="multipleField" destination="6kT-nH-wVq" id="UOz-Ci-yy4"/>
                         <outlet property="playBtn" destination="46T-iL-F2C" id="WhH-X2-Dfw"/>
                         <outlet property="statLbl" destination="rVh-ji-NPk" id="DdQ-y9-s1I"/>
                         <outlet property="titleLogo" destination="aSu-Qr-t3Y" id="K0k-mf-gx5"/>
+                        <outlet property="winnerbtn" destination="SBc-i4-PYS" id="4Ow-bM-GOk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,6 +140,7 @@
     </scenes>
     <resources>
         <image name="MULTIPLES" width="533" height="124"/>
+        <image name="Winner!" width="402" height="160"/>
         <image name="add" width="211" height="101"/>
         <image name="chalkboard" width="801" height="750"/>
         <image name="play" width="272" height="268"/>
